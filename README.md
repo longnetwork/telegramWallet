@@ -6,7 +6,7 @@ You can accept / transfer **LONG** coins, as well as burn coins and receive in r
 ## How to install personal LONG Wallet
 
 **1.** Get a personal telegram bot token:
-   - Go to @BotFather on Telegram (https://t.me/botfather) and click **"Start"**. Then click `/newbot` and enter any screen name for the wallet:  
+   - Go to `@BotFather` on Telegram (https://t.me/botfather) and click **"Start"**. Then click `/newbot` and enter any screen name for the wallet:  
     ![](https://longnetwork.github.io/assets/images/bot_long1_2_3_4.png)  
    - Then, at the prompt, enter the name of the bot, unique in the entire telegram network. 
      It must end in **"Bot"** or **"bot"**. If you entered a unique name, then you will be given a secret telegram-token 
@@ -35,7 +35,7 @@ You can accept / transfer **LONG** coins, as well as burn coins and receive in r
 
 *Note. If the runtime takes a long time to load, just refresh the page and try again*  
 *Note. Each new deployment generates a new web application link to save in `const APP_URL= '...'`*  
-*Note. command /burn 0 0x... (with 0 amount) can be used to respond to a request for your wLONG token address*  
+*Note. command `/burn 0 0x...` (with 0 amount) can be used to respond to a request for your **wLONG** token address*  
 
 
 <br>
