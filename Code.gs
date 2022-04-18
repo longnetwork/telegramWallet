@@ -1,8 +1,8 @@
 const BOT_VERSION="v0.1"
              //**********:***********************************
-const TOKEN = '5162122026:AAFy03MP-Ol6qOrDcqi1e1LThFm26rUY0dM'; // from @BotFather Keep it a secret!!!
+const TOKEN = '**********:***********************************'; // from @BotFather Keep it a secret!!!
               //https://script.google.com/macros/s/************************************************************************/exec
-const APP_URL= 'https://script.google.com/macros/s/AKfycbwzldwxKItB-ByXrYVZl82Zo287PZo8dr1LFBgEBMlxe1Oya3kCax5CPFa0wYp6xdmeOA/exec'; // Keep it a secret!!!
+const APP_URL= 'https://script.google.com/macros/s/************************************************************************/exec'; // Keep it a secret!!!
 // Тип развертывания Web App, Доступно - ВСЕМ (значит сервера телеги смогут обращатся, но публиковать линк НЕЛЬЗЯ!)
 
 const EXPLORER= 'https://explorer.crypton.cf';  // Через какой эксплорер работаем - Спецификация протокола важна!
