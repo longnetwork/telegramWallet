@@ -1,8 +1,8 @@
 const BOT_VERSION="v0.1"
              //**********:***********************************
-const TOKEN = '**********:***********************************'; // from @BotFather Keep it a secret!!!
+const TOKEN = '5162122026:AAFy03MP-Ol6qOrDcqi1e1LThFm26rUY0dM'; // from @BotFather Keep it a secret!!!
               //https://script.google.com/macros/s/************************************************************************/exec
-const APP_URL= 'https://script.google.com/macros/s/************************************************************************/exec'; // Keep it a secret!!!
+const APP_URL= 'https://script.google.com/macros/s/AKfycbwzldwxKItB-ByXrYVZl82Zo287PZo8dr1LFBgEBMlxe1Oya3kCax5CPFa0wYp6xdmeOA/exec'; // Keep it a secret!!!
 // Тип развертывания Web App, Доступно - ВСЕМ (значит сервера телеги смогут обращатся, но публиковать линк НЕЛЬЗЯ!)
 
 const EXPLORER= 'https://explorer.crypton.cf';  // Через какой эксплорер работаем - Спецификация протокола важна!
@@ -13,6 +13,15 @@ const EXPLORER= 'https://explorer.crypton.cf';  // Через какой экс�
 */
 
 const CONFIRMATIONS=1;  // Пока входящие не потраченные транзы не набирут столько подтверждений - игнорируются
+
+const commands=[
+        { command: 'help', description: 'list commands' },
+        { command: 'address', description: 'your address' },
+        { command: 'balance', description: 'address balance' },
+        { command: 'send', description: 'send money' },
+        { command: 'burn', description: 'burn money' },
+        { command: 'secret', description: 'your WIF key'}
+      ];
 
 function initialize(keepID=false) { // Run once after FIRST deployment!
   // Нужно запустить разок после ПЕРВОГО развертывания для связи телеги и бота
@@ -25,6 +34,7 @@ function initialize(keepID=false) { // Run once after FIRST deployment!
 
   PropertiesService.getScriptProperties().setProperty("version",BOT_VERSION);
 
+  Tapi.setMyCommands(commands);
   Tapi.setWebhook(APP_URL);
 
   let triggers = ScriptApp.getProjectTriggers(); for(let trg of triggers) ScriptApp.deleteTrigger(trg);
@@ -112,14 +122,7 @@ class Bot {
     let no_bot= this.message.from.is_bot===false;
 
     if(!this.botID) { // Сработает при деплое и обновлении так как botID сбрасывается
-      Tapi.setMyCommands([
-        { command: 'help', description: 'list commands' },
-        { command: 'address', description: 'your address' },
-        { command: 'balance', description: 'address balance' },
-        { command: 'send', description: 'send money' },
-        { command: 'burn', description: 'burn money' },
-        { command: 'secret', description: 'your WIF key'}
-      ]);
+      Tapi.setMyCommands(commands);
       this.botID= Tapi.getBotID();
       Slog.write(`bot_id: ${this.botID}`);
     }
